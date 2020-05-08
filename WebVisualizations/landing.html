@@ -1,37 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<!-- define title and put the dependencies needed -->
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- link to CSS-->
-<link rel="stylesheet" type="text/css" href="Assets\style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- title -->
+  <title>Bootstrap Visualization Dashboard</title>
+
+  <!-- needed to run bootstrap, dont forget to add to projects-->
+  <link rel="stylesheet" href="bootstrap.min.css" media="screen">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- call css so will help style website -->
+  <link rel="stylesheet" href="styles.css" media="screen">
 </head>
+
 <body>
 
-<div class="navbar">
-  <a href="#home">Home</a>
-  <a href="#news">News</a>
-  <div class="dropdown">
-    <button class="dropbtn">Dropdown 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
+  <!-- navbar at top of screen -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid navbar-custom">
+
+      <!-- one row will be the navbar -->
+      <div class="row">
+        <!-- header to make sure stays on top -->
+        <div class="navbar-header">
+          <!-- toggler will push all items to the right -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <!-- hidden but push what we need to the right -->
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- define for latitude -->
+          <div class="col-xs-9 phone-nav">
+            <!-- make this act like the home page button -->
+            <a class="navbar-brand" href="landing.html" id="logoLatitude">Lattitude</a>
+          </div>
+        </div>
+
+        <!-- Collect make drop down menu for plots as well as comparisons and data -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <!-- force to the right -->
+          <ul class="nav navbar-nav navbar-right navbar-right-custom">
+            <!-- make drop down list for plot -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">Plots <span class="caret"></span></a>
+
+              <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="Visualizations\temp.html">Max Temperature</a>
+                  <a class="dropdown-item" href="Visualizations\humidity.html">Humidity</a>
+                  <a class="dropdown-item" href="Visualizations\cloudiness.html">Cloudiness</a>
+                  <a class="dropdown-item" href="Visualizations\wind.html">Wind Speed</a>
+                  <div class="dropdown-divider"></div>
+                </div> -->
+
+              <ul class="dropdown-menu">
+                <li><a href="Visualizations\temp.html">Max Temperature</a></li>
+                <li><a href="Visualizations\humidity.html">Humidity</a></li>
+                <li><a href="Visualizations\cloudiness.html">Cloudiness</a></li>
+                <li><a href="Visualizations\wind.html">Wind Speed</a></li>
+              </ul>
+
+            </li>
+
+            <li><a href="comparison.html">Comparison</a></li>
+            <li><a href="data.html">Data</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div> 
-</div>
+  </nav>
 
-<h3>Summary: Latitude vs X</h3>
-<p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To accomplish
-  this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.
-</p>
-<p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude . Factors
-  we looked at included: temperature, cloudiness, windspeed, and humidity. This site provies the source 
-  data and visualizations created as part of the analysis, as well as explanatins and descriptions of any trends
-  and correlations witnessed.
-</p>
+  <!-- body of website -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div id="summary">
+          <h1>Summary: Latitude vs. X</h1>
+        </div>
+        <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To
+          accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500
+          cities.</p>
+        <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude.
+          Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site provides the
+          source data and visualizations created as part of the analysis, as well as explanations and descriptions of
+          any trends and correlations witnessed.</p>
 
+      </div>
+      <div class="col-md-3">
+        <div id="visualization">
+          <h1>Visualizations</h1>
+        </div>
+        <div id="images">
+          <a href="Visualizations\temp.html"><img src="Resources\assets\images\Fig1.png"
+              alt="Latitude vs. Max Temperature" class="imageNav-photo"></a>
+          <a href="Visualizations\humidity.html"><img src="Resources\assets\images\Fig2.png" alt="Latitude vs. Humidity"
+              class="imageNav-photo"></a>
+          <a href="Visualizations\cloudiness.html"><img src="Resources\assets\images\Fig3.png"
+              alt="Latitude vs. Cloudiness" class="imageNav-photo"></a>
+          <a href="Visualizations\wind.html"><img src="Resources\assets\images\Fig4.png" alt="Latitude vs. Wind Speed"
+              class="imageNav-photo"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- to make the drop down menu work -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

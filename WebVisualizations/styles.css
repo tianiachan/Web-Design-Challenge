@@ -1,0 +1,46 @@
+/* get logo to display properly */
+#logoLatitude
+{
+    /* stay to the left */
+    margin-left: 70px;
+    /* text color */
+    color: white;
+    /* background color */
+    background: turquoise;
+}
+
+/* get rest of navbar on the right */
+#collapse
+{
+    margin-right: 70px;
+}
+
+/* set image size*/
+img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#visualization
+{
+    /* text color */
+    color: turquoise;
+    /* center the text */
+    text-align: center;
+}
+#summary
+{
+    /* text color */
+    color: turquoise;
+}
+#p
+{
+    text-align: left;
+}
+
+h2
+{
+    /* text color */
+    color: turquoise;
+}
